@@ -1,0 +1,58 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+  output-dir: docs
+
+website:
+  title: "Public Good Data Wrangle"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Guide to Education Data in R"
+        href: education_data_workshop.qmd
+      - about.qmd
+    tools:
+      - icon: github
+        menu:
+          - text: Source
+            href: https://github.com/DavidsonCollege-DataScience/pg-data-wrangle
+          - text: Report an issue
+            href: https://github.com/DavidsonCollege-DataScience/pg-data-wrangle/issues
+
+format:
+  html:
+    theme:
+      light: materia
+      dark: [materia, style/dark_materia.scss]
+    linkcolor: "#d42121"
+    fig-width: 8
+    fig-height: 5
+    html-table-processing: none
+    callout-appearance: simple
+    page-layout: full
+    lightbox: true
+    toc: true
+    toc-depth: 3
+    code-link: true
+    code-copy: true
+    # code-tools: true
+    code-overflow: wrap
+    code-block-bg: true
+    code-block-border-left: "#3da3f5"
+    respect-user-color-scheme: true
+    highlight-style: arrow
+  revealjs:
+    callout-appearance: simple
+    html-table-processing: none
+    code-block-bg: true
+    code-block-border-left: "#3da3f5"
+
+execute:
+  freeze: auto
+  cache: true
+
+editor: source

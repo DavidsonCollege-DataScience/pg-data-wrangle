@@ -1,0 +1,12 @@
+---
+title: "Public Good Data Wrangle"
+subtitle: "{{< var pgdw.term >}}"
+format: html
+listing: 
+  type: grid
+  sort: false
+  contents:
+    - "education_data_workshop.qmd"
+    - "about.qmd"
+---
+
