@@ -192,7 +192,7 @@ knitr::kable(head(admission_data))
 
 ## Conclusion
 
-That's it! We hope this 
+That's it! We hope this helps you locate the data you need for your team's entry in the competition!
 
 
 
