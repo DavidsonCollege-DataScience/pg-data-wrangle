@@ -1,5 +1,6 @@
 ---
 title: "Mapping Using ggplot"
+author: "Dr. Kevin Wang"
 format: html
 execute:
   cache: true
@@ -11,6 +12,9 @@ The `ggmap` package is a mapping library for R that is based on ggplot2. It allo
 
 ![](https://raw.githubusercontent.com/dkahle/ggmap/refs/heads/master/tools/README-ggmap-patchwork-1.png){.preview-image fig-alt="ggmap package example"}
 
+## Reference
+
+- [GitHub repository](https://github.com/dkahle/ggmap)
 
 ## Installation
 

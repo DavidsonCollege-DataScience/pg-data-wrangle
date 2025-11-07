@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.40">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Dr.&nbsp;Kevin Wang">
 <title>Mapping Using ggplot – Public Good Data Wrangle</title>
 <style>
 code{white-space: pre-wrap;}
@@ -161,6 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
   <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
   <li><a href="#sample-dataset" id="toc-sample-dataset" class="nav-link" data-scroll-target="#sample-dataset">Sample Dataset</a></li>
   <li><a href="#mapping" id="toc-mapping" class="nav-link" data-scroll-target="#mapping">Mapping</a></li>
@@ -176,6 +178,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="quarto-title-meta column-page-left">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr.&nbsp;Kevin Wang </p>
+          </div>
+  </div>
     
   
     
@@ -186,7 +194,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header><section id="intro" class="level2"><h2 class="anchored" data-anchor-id="intro">Intro</h2>
 <p>The <code>ggmap</code> package is a mapping library for R that is based on ggplot2. It allows data scientists to retrieve maps from a variety of sources like OSM, Google Maps, etc.</p>
 <p><a href="https://raw.githubusercontent.com/dkahle/ggmap/refs/heads/master/tools/README-ggmap-patchwork-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://raw.githubusercontent.com/dkahle/ggmap/refs/heads/master/tools/README-ggmap-patchwork-1.png" class="preview-image img-fluid" alt="ggmap package example"></a></p>
-</section><section id="installation" class="level2"><h2 class="anchored" data-anchor-id="installation">Installation</h2>
+</section><section id="reference" class="level2"><h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/dkahle/ggmap">GitHub repository</a></li>
+</ul></section><section id="installation" class="level2"><h2 class="anchored" data-anchor-id="installation">Installation</h2>
 <p>First, let’s install some packages:</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>

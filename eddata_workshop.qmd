@@ -1,5 +1,6 @@
 ---
 title: "Guide to Education Data in R"
+author: "Prof. Pete Benbow"
 format: html
 execute:
   cache: true
@@ -13,8 +14,8 @@ The `educationdata` package provides an R wrapper for the Urban Institute's Educ
 
 ## Reference
 
-- [GitHub repository](https://github.com/UrbanInstitute/education-data-package-r){target="_blank"}
-- [Urban Institute Education Data Portal](https://educationdata.urban.org/documentation/#how_to_use){target="_blank"}
+- [GitHub repository](https://github.com/UrbanInstitute/education-data-package-r)
+- [Urban Institute Education Data Portal](https://educationdata.urban.org/documentation/#how_to_use)
 
 ## Installing the package
 

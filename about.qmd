@@ -4,7 +4,7 @@ format: html
 toc: false
 about:
   template: trestles
-  image: images/data_wrangle_logo.png
+  image: images/feature_data_wrangle_logo.png
   links:
     - icon: github
       text: Github

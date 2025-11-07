@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Public Good Data Wrangle",
     "section": "",
-    "text": "Guide to Education Data in R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMapping Using ggplot\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAbout\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Guide to Education Data in R\n\n\n\n\n\n\nProf. Pete Benbow\n\n\n\n\n\n\n\n\n\n\n\n\nMapping Using ggplot\n\n\n\n\n\n\nDr. Kevin Wang\n\n\n\n\n\n\n\n\n\n\n\n\nAbout\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "eddata_workshop.html",
@@ -89,6 +89,13 @@
     "title": "Mapping Using ggplot",
     "section": "",
     "text": "The ggmap package is a mapping library for R that is based on ggplot2. It allows data scientists to retrieve maps from a variety of sources like OSM, Google Maps, etc."
+  },
+  {
+    "objectID": "ggmap_workshop.html#reference",
+    "href": "ggmap_workshop.html#reference",
+    "title": "Mapping Using ggplot",
+    "section": "Reference",
+    "text": "Reference\n\nGitHub repository"
   },
   {
     "objectID": "ggmap_workshop.html#installation",
