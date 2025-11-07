@@ -1,0 +1,198 @@
+---
+title: "Guide to Education Data in R"
+format: html
+execute:
+  cache: true
+---
+
+## Intro
+
+The `educationdata` package provides an R wrapper for the Urban Institute's Education Data API, allowing researchers to access millions of rows of data from the Common Core Dataset (CCD), the Integrated Post-Secondary Education Data System (IPEDS), the U.S. Department of Education's Federal Student Aid (FSA) office, and other data sources.
+
+![](https://raw.githubusercontent.com/UrbanInstitute/education-data-package-r/refs/heads/main/man/figures/logo.png){.preview-image fig-alt="educationdata package logo" height="300"}
+
+## Reference
+
+- [GitHub repository](https://github.com/UrbanInstitute/education-data-package-r){target="_blank"}
+- [Urban Institute Education Data Portal](https://educationdata.urban.org/documentation/#how_to_use){target="_blank"}
+
+## Installing the package
+
+The `educationdata` package can be installed either from CRAN or GitHub. The code block below allows you to install the latest available version from GitHub.
+
+Alternatively, to install from CRAN, you can run `install.packages("educationdata")` in your R console.
+
+```{r}
+#| eval: false
+
+library(devtools)
+
+# Install the educationdata package
+if (!requireNamespace("devtools", quietly = TRUE)) {
+  install.packages("devtools")
+}
+devtools::install_github("UrbanInstitute/education-data-package-r")
+```
+
+## Loading and exploring the package
+
+Now that we've installed the package, let's load it using `library()`.
+
+After that we can list the available functions in the package with `ls()`, or we can consult the package's documentation with `help(package = educationdata)`, or by running `?educationdata` in the R console:
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(educationdata)
+
+knitr::kable(ls("package:educationdata"))
+```
+
+We see that `educationdata` has two helper functions included: `get_education_data()` and `get_education_data_summary()`. Let's explore how to use those in the next part.
+
+---
+
+## `educationdata` functions
+
+### `get_education_data()`
+
+The `get_education_data()` function allows us to retrieve fine-grained data on a variety of topics. For a good sense of what topics are available, we recommend viewing the GitHub repository linked above.
+
+In the examples below, we begin by retrieving a list from the Common Core Dataset of all schools in the United States in the year 2020. We can then take that output data frame and pipe it into a dplyr `filter()` call to narrow our search down to schools just from a specific state, like North Carolina.
+
+There are many other variables in the directory output you can use to filter the data frame, so we recommend you explore these. Also, note the presence of the `ncessch` variable, which is the **primary key** (unique identifier) for each school in the country. This can be useful when joining datasets together.
+
+```{r}
+#| message: false
+
+# Retrieve a list of all schools using the "directory" topic
+df_ccd_schools <- get_education_data(
+  level   = "schools",
+  source  = "ccd",
+  topic   = "directory",
+  filters = list(year = 2020)
+)
+
+ccd_nc_schools <- df_ccd_schools |> 
+  filter(state_location == "NC")
+
+ls_ccd_nc_schools <- as.list(df_ccd_schools$ncessch)
+
+knitr::kable(head(ccd_nc_schools))
+```
+
+#### Filtering
+
+Other topics, such as "enrollment," allow researchers to retrieve detailed information about schools. For example, the following example retrieves the count of 12th-grade students enrolled at every school in the country in the year 2020. It does so by using the `filter` argument that is incorporated into the function.
+
+::: callout-caution
+**Proceed with care** when querying large amounts of data like this. It may take several minutes to return everything!
+:::
+
+```{r}
+#| message: false
+
+# Fetch high school data
+df_ccd_grade12_yr2020_enrollment <- get_education_data(
+  level    = "schools",
+  source   = "ccd",
+  topic    = "enrollment",
+  filters  = list(year  = 2020,
+                  grade = 12)
+)
+
+knitr::kable(head(df_ccd_grade12_yr2020_enrollment))
+```
+
+#### Subtopics
+
+By employing the `subtopic` argument, we can take topical data like enrollments and break it down by demographic characteristics like race and sex. In the below example, we filter on a specific high school in North Carolina, choosing grades 9-12 and years 2015-2020, to produce a detailed breakdown of that school's enrollment over several years.
+
+```{r}
+#| message: false
+
+# Fetch high school data
+df_ccd_concordhs_enrollment <- get_education_data(
+  level    = "schools",
+  source   = "ccd",
+  topic    = "enrollment",
+  subtopic = list("race","sex"),
+  filters  = list(year    = 2015:2020,
+                  grade   = 9:12, 
+                  ncessch = '370053000378')
+)
+
+knitr::kable(head(df_ccd_concordhs_enrollment))
+```
+
+---
+
+### `get_education_data_summary()`
+
+The summary endpoint allows us to aggregate data by providing a "stat" argument (e.g., `sum`, `median`, `avg`, `stddev`, etc.) and a "by" argument, effectively grouping a given topic like enrollment by a list of variables.
+
+The example below demonstrates how to sum the enrollment counts of all schools in the year 2020, grouping by grade and sex. 
+
+```{r}
+#| message: false
+
+# Get all schools using the "directory" topic
+df_enroll_by_grade_and_sex <- get_education_data_summary(
+    level   = "schools",
+    source  = "ccd",
+    topic   = "enrollment",
+    stat    = "sum",
+    var     = "enrollment",
+    by      = list("grade","sex"),
+    filters = list(year = 2020)
+)
+
+knitr::kable(head(df_enroll_by_grade_and_sex))
+```
+
+
+---
+
+## Getting college/university data
+
+We can also retrieve college/university data from the `educationdata` package by switching our `source` argument to "ipeds" and our `level` argument to "college-university."
+
+Similar to our CCD data on high schools, we can use the "directory" topic to retrieve a list of all colleges and universities in the United States in a given year. We can further refine this data through filtering as needed.
+
+```{r}
+#| message: false
+
+# Get college/university directory (one row per institution for year 2020)
+college_data <- get_education_data(
+  level   = "college-university",
+  source  = "ipeds",
+  topic   = "directory",
+  filters = list(year = 2020)
+)
+
+knitr::kable(head(college_data))
+```
+
+And again, similar to our high school data, we have the ability to drill down into more fine-grained information, such as admissions data, by introducing other topics like "admissions-enrollment." And, of course, we can use filter sets to narrow or expand our search by years, and we can introduce subtopics that break down the data by different demographic characteristics.
+
+```{r}
+#| message: false
+
+# Fetch college/university admission data
+admission_data <- get_education_data(
+  level   = "college-university",
+  source  = "ipeds",
+  topic   = "admissions-enrollment",
+  filters = list(year = 2020)
+)
+
+knitr::kable(head(admission_data))
+```
+
+## Conclusion
+
+That's it! We hope this helps you locate the data you need for your team's entry in the competition!
+
+
+

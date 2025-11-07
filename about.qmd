@@ -1,11 +1,26 @@
 ---
 title: "About"
 format: html
+toc: false
 about:
-  template: jolla
+  template: trestles
+  image: images/data_wrangle_logo.png
   links:
     - icon: github
       text: Github
       href: https://github.com/DavidsonCollege-DataScience/pg-data-wrangle
 ---
 
+The Public Good Data Wrangle is a new collaborative event between the [Davidson College Department of Data Science](https://www.davidson.edu/academic-departments/data-science) and the [Institute for Public Good](https://www.apublicgood.com/). It's a one-day "data hackathon" that brings together a group of interdisciplinary student programmers and data enthusiasts to tackle a challenge that relates to issues of public significance. 
+
+## Faculty sponsors
+
+### Department of Data Science
+
+- Dr. Laurie Heyer
+- Dr. Kevin Wang
+- Prof. Pete Benbow
+
+### Institute for Public Good
+
+- Dr. Chris Marsicano

@@ -12,8 +12,10 @@ website:
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Guide to Education Data in R"
-        href: education_data_workshop.qmd
+      - text: "eddata tutorial"
+        href: eddata_workshop.qmd
+      - text: "ggmap tutorial"
+        href: ggmap_workshop.qmd
       - about.qmd
     tools:
       - icon: github
@@ -45,6 +47,7 @@ format:
     code-block-border-left: "#3da3f5"
     respect-user-color-scheme: true
     highlight-style: arrow
+    link-external-newwindow: true
   revealjs:
     callout-appearance: simple
     html-table-processing: none
