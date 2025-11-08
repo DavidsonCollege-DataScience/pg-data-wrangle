@@ -4,6 +4,7 @@ subtitle: "{{< var pgdw.term >}}"
 format: html
 listing: 
   type: grid
+  grid-columns: 4
   sort: false
   contents:
     - "eddata_workshop.qmd"
