@@ -9,5 +9,10 @@ listing:
     - "eddata_workshop.qmd"
     - "ggmap_workshop.qmd"
     - "about.qmd"
+    - path: https://hadley.github.io/genzplyr/
+      image: https://hadley.github.io/genzplyr/logo.png
+      title: "genzplyr"
+      description: "genzplyr is an alternative syntax for dplyr that replaces boring old function names with GenZ slang. Your data wrangling is about to hit different."
+
 ---
 

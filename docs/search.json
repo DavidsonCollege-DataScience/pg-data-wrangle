@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Public Good Data Wrangle",
     "section": "",
-    "text": "Guide to Education Data in R\n\n\n\n\n\n\nProf. Pete Benbow\n\n\n\n\n\n\n\n\n\n\n\n\nMapping Using ggplot\n\n\n\n\n\n\nDr. Kevin Wang\n\n\n\n\n\n\n\n\n\n\n\n\nAbout\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Guide to Education Data in R\n\n\n\n\n\n\nProf. Pete Benbow\n\n\n\n\n\n\n\n\n\n\n\n\nMapping Using ggplot\n\n\n\n\n\n\nDr. Kevin Wang\n\n\n\n\n\n\n\n\n\n\n\n\nAbout\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ngenzplyr\n\n\ngenzplyr is an alternative syntax for dplyr that replaces boring old function names with GenZ slang. Your data wrangling is about to hit different.\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "eddata_workshop.html",
@@ -74,7 +74,7 @@
     "href": "about.html#faculty-sponsors",
     "title": "About",
     "section": "Faculty sponsors",
-    "text": "Faculty sponsors\n\nDepartment of Data Science\n\nDr. Laurie Heyer\nDr. Kevin Wang\nProf. Pete Benbow\n\n\n\nInstitute for Public Good\n\nDr. Chris Marsicano"
+    "text": "Faculty sponsors\n\nDepartment of Data Science\n\nDr. Laurie Heyer\nDr. Kevin Wang\nProf. Pete Benbow\n\n\n\nInstitute for Public Good\n\nDr. Chris Marsicano\nDr. Kevin McElrath\nDr. Stacey Riemer"
   },
   {
     "objectID": "ggmap_workshop.html",
