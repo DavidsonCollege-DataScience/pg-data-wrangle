@@ -1,5 +1,5 @@
 ---
-title: "Mapping Using ggplot"
+title: "Mapping with ggplot"
 author: "Dr. Kevin Wang"
 format: html
 execute:
@@ -8,13 +8,9 @@ execute:
 
 ## Intro
 
-The `ggmap` package is a mapping library for R that is based on ggplot2. It allows data scientists to retrieve maps from a variety of sources like OSM, Google Maps, etc.
+The `ggplot2` package, when combined with the `maps` package, allows data scientists to create detailed map visualizations with their data.
 
 ![](https://raw.githubusercontent.com/dkahle/ggmap/refs/heads/master/tools/README-ggmap-patchwork-1.png){.preview-image fig-alt="ggmap package example"}
-
-## Reference
-
-- [GitHub repository](https://github.com/dkahle/ggmap)
 
 ## Installation
 
