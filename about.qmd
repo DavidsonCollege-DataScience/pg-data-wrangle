@@ -24,3 +24,5 @@ The Public Good Data Wrangle is a new collaborative event between the [Davidson 
 ### Institute for Public Good
 
 - Dr. Chris Marsicano
+- Dr. Kevin McElrath
+- Dr. Stacey Riemer
