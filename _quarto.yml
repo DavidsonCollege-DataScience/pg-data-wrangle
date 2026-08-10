@@ -2,57 +2,47 @@ project:
   type: website
   render:
     - "*.qmd"
+    - "!_archive"
   output-dir: docs
 
 website:
   title: "Public Good Data Wrangle"
+  description: "48-hour data science hackathon at Davidson College!"
+  site-url: https://davidsoncollege-datascience.github.io/datafest
+  repo-url: https://github.com/DavidsonCollege-DataScience/pg-data-wrangle-site
+  open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
+  favicon: images/Circle-favicon-32x32.png
   navbar:
-    background: primary
-    search: true
-    left:
-      - text: "Home"
-        href: index.qmd
-      - text: "eddata tutorial"
-        href: eddata_workshop.qmd
-      - text: "ggmap tutorial"
-        href: ggmap_workshop.qmd
-      - about.qmd
-    tools:
-      - icon: github
-        menu:
-          - text: Source
-            href: https://github.com/DavidsonCollege-DataScience/pg-data-wrangle
-          - text: Report an issue
-            href: https://github.com/DavidsonCollege-DataScience/pg-data-wrangle/issues
+    search: false
+    right:
+      - text: "<span class='btn btn-light'>Register now!</span>"
+        href: https://forms.gle/Fbp3XjCReeLyfgcr7
+      - text: About
+        href: index.qmd#about
+      - text: Location
+        href: index.qmd#location
+      - text: Schedule
+        href: index.qmd#schedule
+      - text: FAQ
+        href: index.qmd#faq
+      - text: Sponsors
+        href: index.qmd#sponsors
+  page-footer:
+    center: |
+      [![](/images/davidson-wordmark-horizontal-lockup-white_sm.png){fig-alt="Davidson College" target="_blank" width="50%"}](https://davidson.edu)
+    right: "Made with Quarto"
+    background: "#0f1012"
+    foreground: "#ffffff"
 
 format:
   html:
-    theme:
-      light: materia
-      dark: [materia, style/dark_materia.scss]
-    linkcolor: "#d42121"
-    fig-width: 8
-    fig-height: 5
-    html-table-processing: none
-    callout-appearance: simple
-    page-layout: full
-    lightbox: true
-    toc: true
-    toc-depth: 3
-    code-link: true
-    code-copy: true
-    # code-tools: true
-    code-overflow: wrap
-    code-block-bg: true
-    code-block-border-left: "#3da3f5"
-    respect-user-color-scheme: true
-    highlight-style: arrow
-    link-external-newwindow: true
-  revealjs:
-    callout-appearance: simple
-    html-table-processing: none
-    code-block-bg: true
-    code-block-border-left: "#3da3f5"
+    # backgroundcolor: "#e6e6e6"
+    backgroundcolor: "#ffffff"
+    fontcolor: "black"
+    linkcolor: "black"
+    mainfont: "Atkinson Hyperlegible"
+    fontsize: 20px
+    theme: [materia, styles.scss]
 
 execute:
   freeze: auto

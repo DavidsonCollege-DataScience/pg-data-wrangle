@@ -1,0 +1,111 @@
+/*-- scss:defaults --*/
+
+$primary: #d42121;
+$body-bg: #FFFFFF;
+$body-color: rgb(55, 58, 60);
+$link-color: rgb(39, 128, 227);
+
+@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
+
+$font-family: "Atkinson Hyperlegible", sans-serif;
+
+/*-- scss:rules --*/
+
+.card:hover {
+    color: #d42121;
+}
+
+.quarto-grid-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.quarto-grid-link:hover {
+    text-decoration: none;
+    color: inherit;
+    transform: scale(1.05); /* Zoom to 105% */
+}
+
+div.quarto-about-jolla .about-link {
+    font-size: 1.0em;
+    padding: .25em .5em;
+    border-radius: 4px
+}
+
+div.quarto-about-jolla .about-link:hover {
+    background-color: #d42121;
+    color: #fff;
+}
+
+/* Make the button stand out more */
+.navbar .nav-link .btn {
+    padding: 0.5rem 1rem;  /* Increased padding for more height */
+    font-size: 0.7rem;
+    line-height: 1.2;
+    vertical-align: middle;
+}
+
+/* Reduce overall navbar height */
+.navbar {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+/* Optionally make the navbar brand/logo smaller too */
+.navbar-logo {
+    max-height: 20px;  /* Reduced from 24px */
+}
+
+/* Increase horizontal spacing between navbar items */
+//.navbar-expand-lg .navbar-nav .nav-link {
+//    padding-left: 1rem;   /* Increased from .6rem */
+//    padding-right: 1rem;  /* Increased from .6rem */
+//}
+
+.navbar-brand {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+/* Ensure all navbar items are vertically centered */
+.navbar-nav {
+    align-items: center;
+}
+
+.navbar .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-link {
+    display: flex;
+    align-items: center;
+}
+
+/* Remove extra spacing that might be causing alignment issues */
+nav .nav-item:not(.compact) {
+    padding-top: 0;
+}
+
+div.callout-note.callout {
+    border-left-color: #d42121;
+    background-color: #ffffff;
+}
+
+.callout.callout-style-simple {
+    padding: .4em .7em;
+    border-left: 5px solid;
+    border-right: 1px solid #888888;
+    border-top: 1px solid #888888;
+    border-bottom: 1px solid #888888;
+}
+
+#sponsors .quarto-grid-item p.card-img-top>img {
+    max-height: unset !important;
+    object-fit: contain;
+    padding: .4em .7em;
+}

@@ -1,19 +1,104 @@
 ---
 title: "Public Good Data Wrangle"
 subtitle: "{{< var pgdw.term >}}"
-format: html
-listing: 
-  type: grid
-  grid-columns: 4
-  sort: false
-  contents:
-    - "eddata_workshop.qmd"
-    - "ggmap_workshop.qmd"
-    - "about.qmd"
-    - path: https://hadley.github.io/genzplyr/
-      image: https://hadley.github.io/genzplyr/logo.png
-      title: "genzplyr"
-      description: "genzplyr is an alternative syntax for dplyr that replaces boring old function names with GenZ slang. Your data wrangling is about to hit different."
+format: 
+  html: 
+    smooth-scroll: true
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css">
+          <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.js"></script>
+filters:
+  - accordion
+about:
+  id: hero-heading
+  template: jolla
+  image: images/feature_data_wrangle_logo.png
+  image-shape: rectangle
+  image-width: 75%
+  image-title: "PGDW logo"
+  image-alt: "Official logo for the Public Good Data Wrangle"
+  links:
+    - icon: calendar-check-fill
+      text: "October 3, 2027"
+    - icon: geo-alt-fill
+      text: "Davidson College, NC"
+accordion:
+  - faq:
+    - header: "Who can participate in the Data Wrangle?"
+      body: "The Public Good Data Wrangle is open to all currently-enrolled Davidson students. We want a diverse group representing various majors, class years, and skill levels to participate!"
+    - header: "How much does this event cost?"
+      body: "Participation is 100% free to Davidson students! The college will provide meals, snacks, and drinks for all participants."
+    - header: "What should I bring with me?"
+      body: "Bring your laptop and charger, a water bottle, and any other essentials you might need for a full day of building cool stuff with data!"
+    - header: "Do I need a team?"
+      body: "While the Data Wrangle does organize students into teams of three, we do not require you to bring your own team with you. If you show up solo, we will find a team for you! But you can also form your own team prior to DataFest if you like by adding your teammates' names on the registration form."
+    - header: "Will there be prizes?"
+      body: "Yes! We will be raffling off prizes throughout the weekend, plus teams have the opportunity to win additional prizes under three award categories that will be judged on the final day of the competition: (1) Best Visualization, (2) Best Use of External Data, and (3) Best Insight."
+---
+
+:::{#hero-heading}
+```{=html}
+<div id="flipdown" class="flipdown" style="display:none;"></div>
+
+<script>
+  const targetDate = new Date('2026-10-03T10:00:00-05:00');
+  const daysUntil = (targetDate - new Date()) / (1000 * 60 * 60 * 24);
+  if (daysUntil > 0 && daysUntil < 100) {
+    document.getElementById('flipdown').style.display = '';
+    new FlipDown(targetDate.getTime() / 1000).start();
+  }
+</script>
+```
+:::
+
+## What is the Public Good Data Wrangle? {#about}
+
+Brought to you by the [Martin Institute for Public Good](https://www.apublicgood.com){target="_blank"} and the Davidson College Department of Data Science, the Public Good Data Wrangle (PGDW) is an annual one-day "data science hackathon" that brings together a group of interdisciplinary student programmers and data enthusiasts to tackle a challenge that relates to issues of public significance.
+
+In 2025, we analyzed millions of rows of high school and college admission data to look for potential inequities in the college recruitment process.
+
+In 2026... the sky is the limit!
 
 ---
+
+## Location {#location}
+
+Data Wrangle 2026 location is TBD!
+
+<!-- will be taking place in the Watson Life Sciences building on Davidson's campus. Limited parking is available in the Preyer lot, which is directly across the street at 226 Concord Rd, Davidson, NC 28036. Additional public parking is available along Concord Road.
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1433.7712338430547!2d-80.84767879290608!3d35.49958731445351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8856aa3657441de1%3A0x75a76ac021be6677!2sWatson%20Life%20Sciences%2C%20225%20Concord%20Rd%2C%20Davidson%2C%20NC%2028036!5e1!3m2!1sen!2sus!4v1770923375616!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+![Map showing DataFest parking locations](img/datafest_parking.png){.lightbox}
+
+![Watson floorplan showing key DataFest locations](img/watson_floorplan.png){.lightbox} -->
+
+---
+
+## Schedule {#schedule}
+
+Data Wrangle 2026 schedule is TBD!
+
+---
+
+## Frequently Asked Questions (FAQ) {#faq}
+
+{{< accordion faq >}}
+
+---
+
+## Sponsors
+
+### Department of Data Science
+
+- Dr. Laurie Heyer
+- Dr. Kevin Wang
+- Prof. Pete Benbow
+
+### The Martin Institute for Public Good
+
+- Dr. Chris Marsicano
+- Dr. Kevin McElrath
+- Dr. Ken Menkhaus
 
