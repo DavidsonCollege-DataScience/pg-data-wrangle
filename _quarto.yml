@@ -8,7 +8,7 @@ project:
 website:
   title: "Public Good Data Wrangle"
   description: "48-hour data science hackathon at Davidson College!"
-  site-url: https://davidsoncollege-datascience.github.io/datafest
+  site-url: https://datasci.davidson.edu/datawrangle
   repo-url: https://github.com/DavidsonCollege-DataScience/pg-data-wrangle-site
   open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
   favicon: images/Circle-favicon-32x32.png
@@ -29,7 +29,7 @@ website:
         href: index.qmd#sponsors
   page-footer:
     center: |
-      [![](/images/davidson-wordmark-horizontal-lockup-white_sm.png){fig-alt="Davidson College" target="_blank" width="50%"}](https://davidson.edu)
+      [![](images/davidson-wordmark-horizontal-lockup-white_sm.png){fig-alt="Davidson College" target="_blank" width="50%"}](https://davidson.edu)
     right: "Made with Quarto"
     background: "#0f1012"
     foreground: "#ffffff"

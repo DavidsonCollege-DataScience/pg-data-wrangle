@@ -28,31 +28,47 @@ jobs:
       - name: Render website
         run: |
           quarto render --profile release --cache-refresh
-      # - name: Copy Static App Config to Output
-      #   run: |
-      #     cp -vf staticwebapp.config.json docs/staticwebapp.config.json
-      - name: Output folder directories
-        run: ls
 
-      - name: Upload artifact for deploy job
+      - name: Upload artifact for publish job
         uses: actions/upload-artifact@v4
         with:
-            name: site_deployment
-            path: docs
+          name: site_build
+          path: docs
 
-  deploy:
+  publish:
     runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Get artifact
         uses: actions/download-artifact@v5
         with:
-          name: site_deployment
+          name: site_build
+          path: build
 
-      - name: Deploy to Azure
-        uses: azure/static-web-apps-deploy@v1
+      # datasci.davidson.edu is a shared Azure Static Web App; only the
+      # DavidsonCollege-DataScience/datasci-hub repo deploys to it directly
+      # (each repo deploying straight to Azure would clobber the others'
+      # paths, since SWA deploys always fully replace the app's content).
+      # So publish our rendered output into hub/datawrangle/ instead, and
+      # let the hub's own deploy workflow pick it up alongside datafest and
+      # datacats. See that repo's README for the full architecture.
+      - name: Checkout datasci-hub
+        uses: actions/checkout@v4
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          action: "upload"
-          app_location: "/datawrangle"
-          output_location: "/docs"
+          repository: DavidsonCollege-DataScience/datasci-hub
+          token: ${{ secrets.HUB_REPO_PUSH_TOKEN }}
+          path: hub
+
+      - name: Sync build output into hub's /datawrangle
+        run: |
+          rsync -a --delete build/ hub/datawrangle/
+          cd hub
+          git config user.name "pg-data-wrangle-site CI"
+          git config user.email "actions@users.noreply.github.com"
+          git add datawrangle
+          if git diff --cached --quiet; then
+            echo "No changes to publish"
+          else
+            git commit -m "Publish pg-data-wrangle-site@${GITHUB_SHA}"
+            git push
+          fi
